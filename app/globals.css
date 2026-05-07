@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+
+@theme inline {
+  --color-charcoal: #171e19;
+  --color-dark-gray: #272727;
+  --color-sage: #b7c6c2;
+  --color-yellow: #ffe17c;
+  --color-yellow-dim: #ffe17c33;
+  --color-white: #ffffff;
+  --color-light-gray: #f8f9fa;
+
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-charcoal);
+
+  --font-anton: 'Anton', sans-serif;
+  --font-satoshi: 'Satoshi', sans-serif;
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-fade-in: fade-in 0.5s ease both;
+  --animate-pulse-soft: pulse-soft 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-slide-in-left: slide-in-left 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-slide-in-right: slide-in-right 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-count-up: count-up 2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes grid-shift {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+/* Fonts loaded via <link> tags in layout.js */
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  font-family: var(--font-satoshi);
+  overflow-x: hidden;
+}
+
+/* Grid background utility */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, #b7c6c220 1px, transparent 1px),
+    linear-gradient(to bottom, #b7c6c220 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, #b7c6c210 1px, transparent 1px),
+    linear-gradient(to bottom, #b7c6c210 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Yellow highlight behind text */
+.text-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.text-highlight::before {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: -4px;
+  right: -4px;
+  height: 40%;
+  background: var(--color-yellow);
+  transform: rotate(-2deg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-charcoal);
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-charcoal);
+}
+
+/* Card hover transition */
+.card-hover {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(23, 30, 25, 0.12);
+}
+
+/* Intersection observer animation triggers */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
