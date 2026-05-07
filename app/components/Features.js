@@ -11,7 +11,7 @@ export default function Features() {
         </svg>
       ),
       title: "AI at the core",
-      desc: "Not a wrapper around ChatGPT. Each tool has purpose-built AI pipelines designed for its specific job.",
+      desc: "Not a wrapper around generic chatbots. Each tool has purpose-built AI pipelines designed for its specific job.",
     },
     {
       icon: (

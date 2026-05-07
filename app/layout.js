@@ -11,6 +11,9 @@ export const metadata = {
     "resume builder",
     "automation",
     "Zevo Works",
+    "my-resume",
+    "ATS resume",
+    "free resume builder",
   ],
   openGraph: {
     title: "Zevo Works — Zero Effort, Maximum Output",

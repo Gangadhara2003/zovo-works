@@ -74,11 +74,16 @@ export default function Navbar() {
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
-          className={`font-[Anton] text-2xl tracking-tight pl-3 shrink-0 transition-colors duration-500 ${
-            isScrolled || isMenuOpen ? "text-white" : "text-charcoal"
-          }`}
+          className="pl-3 shrink-0"
         >
-          ZEVO WORKS<span className="text-yellow">.</span>
+          <img
+            src="/zevo-works logo.png"
+            alt="Zevo Works"
+            className="h-8 w-auto transition-all duration-500"
+            style={{
+              filter: (isScrolled || isMenuOpen) ? 'brightness(0) invert(1)' : 'none',
+            }}
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -125,8 +130,9 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-2 shrink-0">
           <a
-            href="#products"
-            onClick={(e) => handleNavClick(e, "#products")}
+            href="https://my-resume.in"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-1.5 px-5 py-2 bg-yellow text-charcoal text-sm font-bold rounded-full hover:bg-yellow/90 hover:shadow-[0_0_20px_rgba(255,225,124,0.3)] transition-all duration-300"
           >
             Get Started
@@ -177,9 +183,11 @@ export default function Navbar() {
               ))}
               <div className="pt-4 border-t border-white/[0.06] mt-3">
                 <a
-                  href="#products"
-                  onClick={(e) => handleNavClick(e, "#products")}
+                  href="https://my-resume.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-center py-3 text-sm font-bold bg-yellow text-charcoal rounded-full hover:bg-yellow/90 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Get Started
                 </a>

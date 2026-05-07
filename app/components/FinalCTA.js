@@ -1,6 +1,10 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
+
 export default function FinalCTA() {
+  const APP_URL = "https://my-resume.in";
+
   return (
     <section id="cta" className="relative py-24 md:py-32 px-6 bg-yellow overflow-hidden">
       {/* Background decorative text */}
@@ -44,20 +48,21 @@ export default function FinalCTA() {
           Let AI tailor your resume in seconds — zero effort, maximum output.
         </p>
 
-        {/* CTA Form */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
-          <input
-            type="email"
-            placeholder="your@email.com"
-            className="w-full sm:flex-1 px-6 py-4 rounded-xl text-base bg-white border-2 border-charcoal/10 focus:outline-none focus:border-charcoal/30 focus:ring-2 focus:ring-charcoal/10 shadow-xl transition-all"
-          />
-          <button className="w-full sm:w-auto font-[Anton] bg-charcoal text-white text-xl uppercase px-8 py-4 rounded-xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 active:scale-95">
-            Get Early Access
-          </button>
+        {/* CTA Button */}
+        <div className="flex flex-col items-center justify-center gap-4 max-w-lg mx-auto">
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-[Anton] bg-charcoal text-white text-xl uppercase px-10 py-4 rounded-xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 active:scale-95 inline-flex items-center gap-2"
+          >
+            Try It Free
+            <ArrowUpRight size={20} />
+          </a>
         </div>
 
         <p className="mt-5 text-sm text-charcoal/40">
-          Free forever for early adopters. No spam, ever.
+          Free to use. No credit card. No spam, ever.
         </p>
       </div>
     </section>

@@ -3,7 +3,7 @@
 export default function Testimonials() {
   const reviews = [
     {
-      text: "ResumePilot literally saved me 6 hours of formatting. Pasted the JD, got a perfect resume. I'm never going back to Google Docs.",
+      text: "my-resume literally saved me 6 hours of formatting. Pasted the JD, got a perfect resume. I'm never going back to Google Docs.",
       name: "Arjun Mehta",
       role: "Software Engineer",
       dark: false,

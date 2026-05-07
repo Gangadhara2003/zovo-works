@@ -1,6 +1,9 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
+
 export default function BentoGrid() {
+  const APP_URL = "https://my-resume.in";
   return (
     <section id="products" className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -21,7 +24,7 @@ export default function BentoGrid() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* Card 1: my-resume — spans 2 cols */}
-          <div className="lg:col-span-2 min-h-[420px] bg-charcoal rounded-2xl p-8 md:p-10 relative overflow-hidden card-hover group cursor-pointer">
+          <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="lg:col-span-2 min-h-[420px] bg-charcoal rounded-2xl p-8 md:p-10 relative overflow-hidden card-hover group cursor-pointer block">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-yellow/5 rounded-full blur-3xl" />
             <div className="absolute bottom-4 right-8 font-[Anton] text-[180px] leading-none text-white/[0.03] uppercase select-none">
@@ -75,8 +78,11 @@ export default function BentoGrid() {
                   </div>
                 </div>
               </div>
+              <div className="mt-4 inline-flex items-center gap-2 text-yellow text-sm font-medium group-hover:gap-3 transition-all">
+                Try my-resume Free <ArrowUpRight size={16} />
+              </div>
             </div>
-          </div>
+          </a>
 
           {/* Card 2: More Tools Coming Soon */}
           <div className="min-h-[420px] bg-light-gray rounded-2xl p-8 relative overflow-hidden card-hover group border border-charcoal/5 flex flex-col items-center justify-center text-center">

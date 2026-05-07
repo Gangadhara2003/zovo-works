@@ -1,6 +1,10 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
+
 export default function Hero() {
+  const APP_URL = "https://my-resume.in";
+
   return (
     <section
       id="hero"
@@ -51,19 +55,28 @@ export default function Hero() {
           actually matters. Build faster. Ship smarter.
         </p>
 
-        {/* CTA Form */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full sm:flex-1 px-6 py-4 border border-charcoal/20 rounded-xl text-base bg-white focus:outline-none focus:border-charcoal/50 focus:ring-2 focus:ring-yellow/30 transition-all"
-          />
-          <button className="w-full sm:w-auto font-[Anton] bg-yellow text-charcoal text-xl uppercase px-8 py-4 rounded-xl hover:bg-yellow/90 hover:shadow-lg hover:shadow-yellow/20 transition-all duration-300 active:scale-95">
-            Join Waitlist
-          </button>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto font-[Anton] bg-yellow text-charcoal text-xl uppercase px-10 py-4 rounded-xl hover:bg-yellow/90 hover:shadow-lg hover:shadow-yellow/20 transition-all duration-300 active:scale-95 inline-flex items-center justify-center gap-2"
+          >
+            Try my-resume Free
+            <ArrowUpRight size={20} />
+          </a>
+          <a
+            href="#products"
+            className="w-full sm:w-auto font-[Anton] bg-transparent text-charcoal text-lg uppercase px-8 py-4 rounded-xl border-2 border-charcoal/20 hover:border-charcoal/40 transition-all duration-300 active:scale-95 text-center"
+          >
+            Learn More
+          </a>
         </div>
 
-
+        <p className="mt-5 text-sm text-charcoal/40">
+          100% Free · No credit card required
+        </p>
       </div>
 
       {/* Bottom fade to white */}

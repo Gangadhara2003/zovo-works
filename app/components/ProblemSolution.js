@@ -14,7 +14,7 @@ export default function ProblemSolution() {
     "Intelligent templates that adapt to every job",
     "One platform for all your productivity tools",
     "Automated workflows that connect everything",
-    "One subscription. Every tool. Always evolving",
+    "Completely free. Every tool. Always evolving",
   ];
 
   return (
