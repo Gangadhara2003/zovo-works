@@ -13,8 +13,8 @@ export default function Footer() {
       { label: "Contact", href: "mailto:gangadharaks2003@gmail.com" },
     ],
     Legal: [
-      { label: "Privacy Policy", href: "#", soon: true },
-      { label: "Terms of Service", href: "#", soon: true },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   };
 
