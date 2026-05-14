@@ -21,11 +21,5 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-    {
-      url: "https://my-resume.in/",
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
   ];
 }
