@@ -10,7 +10,7 @@ export default function Footer() {
     ],
     Company: [
       { label: "About", href: "#features" },
-      { label: "Contact", href: "mailto:gangadharaks2003@gmail.com" },
+      { label: "Contact", href: "mailto:info@zevo-works.in" },
     ],
     Legal: [
       { label: "Privacy Policy", href: "/privacy" },
@@ -64,7 +64,7 @@ export default function Footer() {
               </a>
               {/* Email */}
               <a
-                href="mailto:gangadharaks2003@gmail.com"
+                href="mailto:info@zevo-works.in"
                 className="w-10 h-10 rounded-full border border-sage/20 flex items-center justify-center text-sage/50 hover:bg-yellow hover:text-charcoal hover:border-yellow transition-all duration-200"
                 aria-label="Email"
               >
@@ -113,10 +113,10 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="mailto:gangadharaks2003@gmail.com"
+              href="mailto:info@zevo-works.in"
               className="text-xs text-sage/30 hover:text-sage/60 transition-colors"
             >
-              gangadharaks2003@gmail.com
+              info@zevo-works.in
             </a>
             <span className="text-xs text-sage/20">·</span>
             <p className="text-xs text-sage/30">

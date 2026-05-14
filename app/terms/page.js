@@ -359,10 +359,10 @@ export default function TermsPage() {
               <P>
                 Questions about these Terms? Email{" "}
                 <a
-                  href="mailto:gangadharaks2003@gmail.com"
+                  href="mailto:info@zevo-works.in"
                   className="font-semibold underline decoration-yellow decoration-2 underline-offset-2 hover:bg-yellow/20"
                 >
-                  gangadharaks2003@gmail.com
+                  info@zevo-works.in
                 </a>
                 .
               </P>

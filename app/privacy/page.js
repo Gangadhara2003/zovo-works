@@ -355,10 +355,10 @@ export default function PrivacyPage() {
               <P>
                 Questions, deletion requests, or anything else — email{" "}
                 <a
-                  href="mailto:gangadharaks2003@gmail.com"
+                  href="mailto:info@zevo-works.in"
                   className="font-semibold underline decoration-yellow decoration-2 underline-offset-2 hover:bg-yellow/20"
                 >
-                  gangadharaks2003@gmail.com
+                  info@zevo-works.in
                 </a>
                 . We aim to respond within 5 working days.
               </P>
