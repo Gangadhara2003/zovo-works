@@ -1,109 +1,73 @@
 "use client";
 
+const REVIEWS = [
+  {
+    id: "T.01",
+    text: "my-resume literally saved me 6 hours of formatting. Pasted the JD, got a perfect resume. I'm never going back to Google Docs.",
+    name: "Sujan M B",
+    role: "Software Engineer",
+    tag: "swe",
+  },
+  {
+    id: "T.02",
+    text: "The AI doesn't just fill in blanks — it actually understands what recruiters want. Got 3 interview calls in the first week.",
+    name: "Priya Sharma",
+    role: "Product Manager",
+    tag: "pm",
+  },
+  {
+    id: "T.03",
+    text: "Clean, fast, and actually affordable. This is what SaaS should be — tools that solve real problems without the enterprise tag.",
+    name: "Rahul Desai",
+    role: "Freelance Designer",
+    tag: "design",
+  },
+];
+
 export default function Testimonials() {
-  const reviews = [
-    {
-      text: "my-resume literally saved me 6 hours of formatting. Pasted the JD, got a perfect resume. I'm never going back to Google Docs.",
-      name: "Arjun Mehta",
-      role: "Software Engineer",
-      dark: false,
-      offset: false,
-    },
-    {
-      text: "The AI doesn't just fill in blanks — it actually understands what recruiters want. Got 3 interview calls in the first week after switching.",
-      name: "Priya Sharma",
-      role: "Product Manager",
-      dark: true,
-      offset: true,
-    },
-    {
-      text: "Clean, fast, and actually affordable. This is what SaaS should be — tools that solve real problems without the enterprise price tag.",
-      name: "Rahul Desai",
-      role: "Freelance Designer",
-      dark: false,
-      offset: false,
-    },
-  ];
-
   return (
-    <section id="testimonials" className="py-24 md:py-32 px-6 bg-light-gray">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-xs font-medium uppercase tracking-[0.25em] text-charcoal/50 mb-4 block">
-            What People Say
-          </span>
-          <h2 className="font-[Anton] text-5xl md:text-6xl lg:text-7xl uppercase leading-[0.9] text-charcoal">
-            Real <span className="text-highlight">Results</span>
-          </h2>
-        </div>
+    <section id="testimonials" className="bg-paper border-b hairline">
+      <div className="border-b hairline px-4 md:px-8 py-2 flex justify-between mono-label text-grid/60">
+        <span>08 / LOGS</span>
+        <span className="hidden md:inline">USER_REPORTS · VERIFIED</span>
+        <span>n={REVIEWS.length}</span>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((r, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl p-8 card-hover transition-all duration-300 ${
-                r.dark
-                  ? "bg-charcoal text-white translate-y-0 md:translate-y-4"
-                  : "bg-white border border-charcoal/10"
-              }`}
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {Array.from({ length: 5 }).map((_, s) => (
-                  <svg
-                    key={s}
-                    className="w-5 h-5 text-yellow"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-grid/20">
+        {REVIEWS.map((r) => (
+          <article key={r.id} className="bg-paper p-8 flex flex-col">
+            <div className="flex items-center justify-between mb-6">
+              <span className="mono-label text-forest">{r.id}</span>
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} width="10" height="10" viewBox="0 0 20 20" fill="currentColor" className="text-gold">
+                    <path d="M10 1l2.6 6h6.4l-5.2 4 2 6.6L10 14l-5.8 3.6 2-6.6L1 7h6.4z" />
                   </svg>
                 ))}
               </div>
+            </div>
 
-              {/* Quote */}
-              <p
-                className={`text-lg font-medium leading-relaxed mb-8 ${
-                  r.dark ? "text-white/90" : "text-charcoal/80"
-                }`}
-              >
-                &ldquo;{r.text}&rdquo;
-              </p>
+            <svg width="22" height="22" viewBox="0 0 24 24" className="text-forest/30 mb-4">
+              <path fill="currentColor" d="M7 7h4v4H7zm0 4c0 4 3 6 6 6v-2c-2 0-4-1-4-4zM15 7h4v4h-4zm0 4c0 4 3 6 6 6v-2c-2 0-4-1-4-4z" />
+            </svg>
 
-              {/* Author */}
-              <div className="flex items-center gap-3 mt-auto">
-                <div
-                  className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold ${
-                    r.dark
-                      ? "bg-yellow text-charcoal"
-                      : "bg-charcoal text-white"
-                  }`}
-                >
-                  {r.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
-                <div>
-                  <p
-                    className={`font-[Anton] text-sm uppercase tracking-wide ${
-                      r.dark ? "text-white" : "text-charcoal"
-                    }`}
-                  >
-                    {r.name}
-                  </p>
-                  <p
-                    className={`text-xs ${
-                      r.dark ? "text-sage/50" : "text-charcoal/40"
-                    }`}
-                  >
-                    {r.role}
-                  </p>
+            <p className="font-[JetBrains_Mono] text-[12px] leading-[1.6] text-grid flex-1">
+              {r.text}
+            </p>
+
+            <div className="mt-6 pt-4 border-t hairline flex items-center gap-3">
+              <div className="w-9 h-9 bg-forest text-paper mono-label !text-[11px] flex items-center justify-center">
+                {r.name.split(" ").map((n) => n[0]).join("")}
+              </div>
+              <div>
+                <div className="mono-label text-forest">{r.name}</div>
+                <div className="mono-label !text-[9px] text-grid/60 mt-0.5">
+                  {r.role} · /{r.tag}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </article>
+        ))}
       </div>
     </section>
   );

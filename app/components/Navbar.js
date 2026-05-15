@@ -1,201 +1,203 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+
+const NAV_ITEMS = [
+  { href: "#hero", label: "Index", idx: "00" },
+  { href: "#products", label: "Products", idx: "01" },
+  { href: "#features", label: "System", idx: "02" },
+  { href: "#how-it-works", label: "Process", idx: "03" },
+  { href: "#faq", label: "Docs", idx: "04" },
+];
+
+const TRACK_TWEEN = { type: "tween", duration: 0.22, ease: [0.32, 0.72, 0, 1] };
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [active, setActive] = useState("hero");
+  const [hovered, setHovered] = useState(null);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      const sections = [
-        "hero",
-        "products",
-        "features",
-        "how-it-works",
-        "cta",
-      ];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            setActiveSection(section);
-          }
+    if (!isHome) return;
+    const onScroll = () => {
+      for (const item of NAV_ITEMS) {
+        const el = document.getElementById(item.href.slice(1));
+        if (!el) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top <= 140 && r.bottom >= 140) {
+          setActive(item.href.slice(1));
+          break;
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
 
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    const element = document.querySelector(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleClick = (e, href) => {
+    if (!isHome) {
+      // Navigate to home page with the hash
+      e.preventDefault();
+      router.push(`/${href}`);
+      setIsMenuOpen(false);
+      return;
     }
-    setActiveSection(targetId.replace("#", ""));
+    e.preventDefault();
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
-  const navItems = [
-    { href: "#hero", label: "Home", id: "hero" },
-    { href: "#products", label: "Products", id: "products" },
-    { href: "#features", label: "Why Us", id: "features" },
-    { href: "#how-it-works", label: "Process", id: "how-it-works" },
-  ];
+  const trackedId = hovered ?? active;
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 md:px-6">
-      <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-        className={`
-          flex items-center justify-between
-          px-4 md:px-3 py-2.5
-          rounded-full
-          transition-all duration-500
-          w-full max-w-5xl
-          ${
-            isScrolled || isMenuOpen
-              ? "bg-charcoal/70 backdrop-blur-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-              : "bg-white/[0.04] backdrop-blur-xl border border-charcoal/[0.06]"
-          }
-        `}
-      >
-        {/* Logo */}
-        <a
-          href="#hero"
-          onClick={(e) => handleNavClick(e, "#hero")}
-          className="pl-3 shrink-0"
-        >
-          <img
-            src="/zevo-works logo.png"
-            alt="Zevo Works"
-            className="h-8 w-auto transition-all duration-500"
-            style={{
-              filter: (isScrolled || isMenuOpen) ? 'brightness(0) invert(1)' : 'none',
-            }}
-          />
-        </a>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-0.5 mx-4">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`
-                relative px-3.5 py-1.5 text-sm font-medium rounded-full transition-all duration-200
-                ${
-                  activeSection === item.id
-                    ? isScrolled
-                      ? "text-white"
-                      : "text-charcoal"
-                    : isScrolled
-                    ? "text-white/40 hover:text-white/80"
-                    : "text-charcoal/40 hover:text-charcoal/80"
-                }
-              `}
-              onClick={(e) => handleNavClick(e, item.href)}
-            >
-              {activeSection === item.id && (
-                <motion.div
-                  layoutId="activePill"
-                  className={`absolute inset-0 rounded-full border ${
-                    isScrolled
-                      ? "bg-white/[0.08] border-white/[0.06]"
-                      : "bg-charcoal/[0.06] border-charcoal/[0.06]"
-                  }`}
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 380,
-                    damping: 30,
-                  }}
-                />
-              )}
-              <span className="relative z-10">{item.label}</span>
-            </a>
-          ))}
-        </div>
-
-        {/* Right side */}
-        <div className="flex items-center gap-2 shrink-0">
-          <a
-            href="https://my-resume.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-1.5 px-5 py-2 bg-yellow text-charcoal text-sm font-bold rounded-full hover:bg-yellow/90 hover:shadow-[0_0_20px_rgba(255,225,124,0.3)] transition-all duration-300"
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+      <div className="nav-frame pointer-events-auto bg-paper/90 backdrop-blur-md border-b border-x hairline">
+        <div className="flex items-center justify-between h-14 px-4 md:px-8">
+          {/* ── Logo ── */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 shrink-0 group"
           >
-            Get Started
-            <ArrowUpRight size={14} />
-          </a>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className={`md:hidden p-2 rounded-full transition-colors ${
-              isScrolled || isMenuOpen
-                ? "text-white/60 hover:text-white hover:bg-white/10"
-                : "text-charcoal/60 hover:text-charcoal hover:bg-charcoal/10"
-            }`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </motion.nav>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute top-[72px] left-4 right-4 bg-charcoal/80 backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.5)] md:hidden overflow-hidden"
-          >
-            <div className="p-5 flex flex-col gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`
-                    px-4 py-3 text-base font-medium transition-all duration-200 rounded-xl
-                    ${
-                      activeSection === item.id
-                        ? "text-yellow bg-white/[0.06]"
-                        : "text-white/60 hover:text-white hover:bg-white/[0.04]"
-                    }
-                  `}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-white/[0.06] mt-3">
-                <a
-                  href="https://my-resume.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center py-3 text-sm font-bold bg-yellow text-charcoal rounded-full hover:bg-yellow/90 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get Started
-                </a>
-              </div>
+            <div className="relative w-8 h-8 bg-forest flex items-center justify-center overflow-hidden">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F7F7F5" strokeWidth="2.5" className="relative z-10">
+                <path d="M4 5h16L6 19h14" strokeLinecap="square" />
+              </svg>
+              <span className="absolute inset-0 bg-mint translate-y-full group-hover:translate-y-0 transition-transform duration-200 ease-out" />
             </div>
-          </motion.div>
+            <span className="font-[Space_Grotesk] font-bold text-[15px] tracking-tight text-forest hidden sm:inline">
+              Zevo<span className="text-coral">/</span>Works
+            </span>
+          </Link>
+
+          {/* ── Center nav with tracking outline ── */}
+          <nav
+            className="hidden md:block relative"
+            onMouseLeave={() => setHovered(null)}
+          >
+            <ul className="flex items-center gap-1 relative">
+              {NAV_ITEMS.map((item) => {
+                const id = item.href.slice(1);
+                const isTracked = trackedId === id;
+                const isActive = active === id;
+
+                return (
+                  <li key={item.href} className="relative">
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleClick(e, item.href)}
+                      onMouseEnter={() => setHovered(id)}
+                      className={`relative mono-label flex items-center gap-1.5 px-3 py-1.5 btn-snap ${
+                        isActive ? "text-forest" : "text-grid/60 hover:text-forest"
+                      }`}
+                    >
+                      {/* Tracking outline — shared layoutId so it morphs between items */}
+                      {isTracked && (
+                        <motion.span
+                          layoutId="nav-tracker"
+                          className="absolute inset-0 pointer-events-none"
+                          transition={TRACK_TWEEN}
+                        >
+                          {/* L-corner brackets, drawn with pseudo borders */}
+                          <span className="absolute -top-px -left-px w-2 h-2 border-t border-l border-forest" />
+                          <span className="absolute -top-px -right-px w-2 h-2 border-t border-r border-forest" />
+                          <span className="absolute -bottom-px -left-px w-2 h-2 border-b border-l border-forest" />
+                          <span className="absolute -bottom-px -right-px w-2 h-2 border-b border-r border-forest" />
+                          {/* under-line tick */}
+                          <span className="absolute left-1/2 -bottom-[5px] -translate-x-1/2 w-1 h-1 bg-forest" />
+                        </motion.span>
+                      )}
+
+                      {/* Active fill — also shared id, separate layer */}
+                      {isActive && (
+                        <motion.span
+                          layoutId="nav-active-fill"
+                          className="absolute inset-0 bg-mint/30 -z-0"
+                          transition={TRACK_TWEEN}
+                        />
+                      )}
+
+                      <span className="relative z-10 text-forest/50">{item.idx}.</span>
+                      <span className="relative z-10">{item.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Live "tracked" status pill — reads the currently tracked id */}
+            <div className="absolute -bottom-6 right-0 mono-label !text-[8px] text-grid/45 hidden lg:flex items-center gap-1.5 pointer-events-none">
+              <span className="w-1 h-1 bg-forest animate-[blink_1.4s_steps(2)_infinite]" />
+              TRK · {trackedId.toUpperCase()}
+            </div>
+          </nav>
+
+          {/* ── Right buttons ── */}
+          <div className="flex items-center gap-2">
+            <a
+              href={"https://my-resume.in"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex mono-label items-center gap-2 px-3.5 py-2 border border-forest/40 text-forest hover:bg-forest/5 btn-snap"
+            >
+              <span className="w-1.5 h-1.5 bg-mint border border-forest" />
+              Sign In
+            </a>
+            <a
+              href={"https://my-resume.in"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mono-label relative inline-flex items-center gap-2 px-3.5 py-2 bg-forest text-paper btn-snap overflow-hidden"
+            >
+              <span className="absolute inset-0 bg-forest-deep translate-y-full group-hover:translate-y-0 transition-transform duration-200 ease-out" />
+              <span className="relative">Launch_App</span>
+              <span aria-hidden className="relative group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+            <button
+              className="md:hidden p-2 border hairline text-forest"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
+            >
+              {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
+            </button>
+          </div>
+        </div>
+
+        {isMenuOpen && (
+          <div className="md:hidden border-t hairline bg-paper">
+            <div className="flex flex-col">
+              {NAV_ITEMS.map((item) => {
+                const id = item.href.slice(1);
+                const isActive = active === id;
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                    className={`mono-label relative flex items-center gap-3 px-6 py-4 border-b hairline ${
+                      isActive ? "text-forest bg-mint/20" : "text-forest"
+                    }`}
+                  >
+                    {isActive && (
+                      <span className="absolute left-0 top-0 bottom-0 w-1 bg-forest" />
+                    )}
+                    <span className="text-forest/40">{item.idx}.</span>
+                    {item.label}
+                    <span className="ml-auto">→</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         )}
-      </AnimatePresence>
+      </div>
     </header>
   );
 }

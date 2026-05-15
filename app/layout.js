@@ -80,7 +80,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#1A1815",
+  themeColor: "#F7F7F5",
   width: "device-width",
   initialScale: 1,
 };
@@ -121,11 +121,11 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap"
           rel="stylesheet"
         />
         <script
@@ -133,8 +133,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-[Satoshi,sans-serif]">
-        {children}
+      <body className="min-h-full bg-mosaic font-[General_Sans,sans-serif] text-grid">
+        <div className="page-frame mx-auto bg-paper flex flex-col min-h-screen">
+          {children}
+        </div>
       </body>
     </html>
   );

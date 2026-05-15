@@ -1,129 +1,270 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const APP_URL = "https://my-resume.in";
+
+const NAV = {
+  Products: [
+    { label: "my-resume", href: APP_URL, idx: "01", live: true },
+    { label: "More coming", href: "#products", idx: "02", soon: true },
+  ],
+  Company: [
+    { label: "About", href: "#features", idx: "01" },
+    { label: "Process", href: "#how-it-works", idx: "02" },
+    { label: "FAQ", href: "#faq", idx: "03" },
+    { label: "Contact", href: "mailto:info@zevo-works.in", idx: "04" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy", idx: "01" },
+    { label: "Terms of Service", href: "/terms", idx: "02" },
+  ],
+};
+
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
+  const [tick, setTick] = useState(0);
 
-  const APP_URL = "https://my-resume.in";
-
-  const links = {
-    Products: [
-      { label: "my-resume", href: APP_URL },
-      { label: "More Coming Soon", href: "#products", soon: true },
-    ],
-    Company: [
-      { label: "About", href: "#features" },
-      { label: "Contact", href: "mailto:info@zevo-works.in" },
-    ],
-    Legal: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-    ],
-  };
+  useEffect(() => {
+    const id = setInterval(() => setTick((t) => (t + 1) % 10000), 90);
+    return () => clearInterval(id);
+  }, []);
 
   return (
-    <footer className="bg-charcoal text-white pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <a
-              href="#"
-              className="font-[Anton] text-3xl uppercase tracking-tight"
-            >
-              Zevo Works<span className="text-yellow">.</span>
-            </a>
-            <p className="mt-4 text-sage/50 text-sm leading-relaxed max-w-sm">
-              AI-powered productivity tools that automate the boring stuff.
-              Zero effort, maximum output.
-            </p>
-            {/* Socials */}
-            <div className="flex gap-4 mt-6">
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/in/gangadhara-k-s-563142286/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-sage/20 flex items-center justify-center text-sage/50 hover:bg-yellow hover:text-charcoal hover:border-yellow transition-all duration-200"
-                aria-label="LinkedIn"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              {/* Portfolio */}
-              <a
-                href="https://gangadharaks.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-sage/20 flex items-center justify-center text-sage/50 hover:bg-yellow hover:text-charcoal hover:border-yellow transition-all duration-200"
-                aria-label="Portfolio"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </a>
-              {/* Email */}
-              <a
-                href="mailto:info@zevo-works.in"
-                className="w-10 h-10 rounded-full border border-sage/20 flex items-center justify-center text-sage/50 hover:bg-yellow hover:text-charcoal hover:border-yellow transition-all duration-200"
-                aria-label="Email"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Link Columns */}
-          {Object.entries(links).map(([title, items]) => (
-            <div key={title}>
-              <h4 className="font-[Anton] text-sm uppercase tracking-wider text-white/60 mb-4">
-                {title}
-              </h4>
-              <ul className="space-y-3">
-                {items.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      {...(item.href.startsWith("http") || item.href.startsWith("mailto:")
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      className="text-sm text-sage/50 hover:text-white transition-colors inline-flex items-center gap-2"
-                    >
-                      {item.label}
-                      {item.soon && (
-                        <span className="text-[10px] px-1.5 py-0.5 bg-yellow/10 text-yellow/70 rounded uppercase tracking-wider">
-                          Soon
-                        </span>
-                      )}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <footer className="bg-forest text-paper">
+      {/* ───── Closing strip ───── */}
+      <div className="border-b border-paper/15">
+        <div className="grid grid-cols-12">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div
+              key={i}
+              className="h-4 border-r border-paper/15 last:border-r-0"
+              style={{
+                background:
+                  i === 2 ? "var(--color-coral)" :
+                    i === 5 ? "var(--color-mint)" :
+                      i === 9 ? "var(--color-gold)" :
+                        "transparent",
+                opacity: 0.85,
+              }}
+            />
           ))}
         </div>
+      </div>
 
-        {/* Bottom */}
-        <div className="pt-8 border-t border-sage/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-sage/30">
-            © {currentYear} Zevo Works. All rights reserved.
+      {/* ───── EOF banner ───── */}
+      <div className="border-b border-paper/15 px-4 md:px-8 py-2 flex justify-between mono-label text-paper/55">
+        <span>09 / EOF</span>
+        <span className="hidden md:inline">END_OF_DOCUMENT · scroll ↑ to top</span>
+        <a href="#hero" className="hover:text-paper">
+          ↑ RETURN
+        </a>
+      </div>
+
+      {/* ───── HERO BLOCK — manifesto + status ───── */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] border-b border-paper/15">
+        {/* Manifesto */}
+        <div className="p-8 md:p-12 lg:p-16 lg:border-r border-paper/15">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 bg-paper flex items-center justify-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A3C2B" strokeWidth="2.5">
+                <path d="M4 5h16L6 19h14" strokeLinecap="square" />
+              </svg>
+            </div>
+            <span className="h-display text-2xl text-paper">
+              Zevo<span className="text-coral">/</span>Works
+            </span>
+          </div>
+
+          <h3 className="h-display text-4xl md:text-5xl text-paper max-w-md">
+            Build the tedious stuff away.
+          </h3>
+          <p className="mt-4 text-[14px] text-paper/70 leading-relaxed max-w-md">
+            A one-person studio in Bengaluru, IN — building AI tooling that
+            ships small, runs fast, and stays free. One module out today,
+            more on the way.
           </p>
-          <div className="flex items-center gap-4">
-            <a
-              href="mailto:info@zevo-works.in"
-              className="text-xs text-sage/30 hover:text-sage/60 transition-colors"
-            >
-              info@zevo-works.in
-            </a>
-            <span className="text-xs text-sage/20">·</span>
-            <p className="text-xs text-sage/30">
-              Built with ❤️ in India
-            </p>
+
+          {/* Social rail */}
+          <div className="mt-8 flex flex-wrap gap-2">
+            {[
+              { label: "LINKEDIN", href: "https://www.linkedin.com/in/gangadhara-k-s-563142286/" },
+              { label: "PORTFOLIO", href: "https://gangadharaks.in" },
+              { label: "EMAIL", href: "mailto:info@zevo-works.in" },
+            ].map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target={s.href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="mono-label inline-flex items-center gap-2 px-3 py-1.5 border border-paper/35 text-paper hover:bg-paper hover:text-forest btn-snap"
+              >
+                <span className="w-1.5 h-1.5 bg-paper group-hover:bg-forest" />
+                {s.label}
+                <span>↗</span>
+              </a>
+            ))}
           </div>
         </div>
+
+        {/* Status panel */}
+        <div className="p-8 md:p-10 bg-forest-deep relative">
+          <div className="flex items-center justify-between mb-5">
+            <span className="mono-label text-paper/55">§ STATUS · /live</span>
+            <span className="mono-label text-mint inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-mint animate-[blink_1.4s_steps(2)_infinite]" />
+              ALL_GREEN
+            </span>
+          </div>
+
+          <dl className="border border-paper/25">
+            {[
+              ["UPTIME", "99.94%"],
+              ["P95", "1.8s"],
+              ["TOOLS_LIVE", "01"],
+              ["TOOLS_DRAFT", "00 · open"],
+              ["LAST_DEPLOY", "2026.05.15"],
+              ["TELEMETRY", `T+${String(tick).padStart(4, "0")}`],
+            ].map(([k, v]) => (
+              <div key={k} className="grid grid-cols-[130px_1fr] border-b border-paper/15 last:border-b-0">
+                <dt className="px-3 py-2 mono-label text-paper/55 border-r border-paper/15">{k}</dt>
+                <dd className="px-3 py-2 mono-label !text-[11px] text-paper">{v}</dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* mini-mosaic chips */}
+          <div className="mt-5 grid grid-cols-12 gap-px bg-paper/15">
+            {Array.from({ length: 24 }).map((_, i) => {
+              const lit = (i + Math.floor(tick / 12)) % 7 === 0;
+              const colors = ["bg-mint", "bg-coral", "bg-gold", "bg-paper"];
+              const c = colors[i % 4];
+              return (
+                <div
+                  key={i}
+                  className={`h-3 bg-forest-deep`}
+                  style={{ background: lit ? "" : "var(--color-forest-deep)" }}
+                >
+                  {lit && <div className={`h-full w-full ${c}`} style={{ opacity: 0.85 }} />}
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-2 mono-label !text-[9px] text-paper/40">LIVE TELEMETRY · running</div>
+        </div>
+      </div>
+
+      {/* ───── SITEMAP COLUMNS ───── */}
+      <div className="grid grid-cols-1 md:grid-cols-3 border-b border-paper/15">
+        {Object.entries(NAV).map(([title, items], i) => (
+          <div
+            key={title}
+            className={`p-8 md:p-10 ${i !== 0 ? "md:border-l border-paper/15 border-t md:border-t-0" : ""}`}
+          >
+            <div className="flex items-center justify-between mb-5 pb-3 border-b border-paper/20">
+              <span className="mono-label text-paper/55">/{title.toLowerCase()}</span>
+              <span className="mono-label !text-[10px] text-paper/40">
+                n={items.length}
+              </span>
+            </div>
+            <ul className="space-y-2">
+              {items.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    {...(item.href.startsWith("http") || item.href.startsWith("mailto:")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="group grid grid-cols-[28px_1fr_28px] items-baseline gap-2 text-[14px] text-paper/75 hover:text-paper"
+                  >
+                    <span className="mono-label !text-[9px] text-paper/40">{item.idx}</span>
+                    <span className="flex items-baseline overflow-hidden">
+                      <span className="font-[Space_Grotesk] font-medium truncate">{item.label}</span>
+                      <span className="flex-1 mx-2 border-b border-dotted border-paper/25 translate-y-[-3px]" />
+                    </span>
+                    <span className="mono-label !text-[9px] text-right">
+                      {item.live && <span className="text-mint">●</span>}
+                      {item.soon && <span className="text-gold">○</span>}
+                      {!item.live && !item.soon && <span className="text-paper/30">→</span>}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* ───── SIGNATURE BLOCK — engineering drawing stamp ───── */}
+      <div className="grid grid-cols-2 md:grid-cols-6 border-b border-paper/15">
+        {[
+          ["DRAWN_BY", "Gangadhara K.S."],
+          ["CHECKED", "Gangadhara K.S."],
+          ["DATE", "2026.05.15"],
+          ["SCALE", "1 : 1"],
+          ["REVISION", "v1.0"],
+          ["SHEET", "01 / 01"],
+        ].map(([k, v], i) => (
+          <div
+            key={k}
+            className={`p-5 ${i !== 0 ? "border-l border-paper/15" : ""} ${i === 3 ? "md:border-l" : ""}`}
+          >
+            <div className="mono-label !text-[9px] text-paper/45">{k}</div>
+            <div className="font-[Space_Grotesk] text-[15px] font-semibold text-paper mt-2">{v}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* ───── GIANT WORDMARK ───── */}
+      <div className="relative overflow-hidden">
+        <div
+          className="h-display leading-[0.85] tracking-tighter select-none pointer-events-none whitespace-nowrap pl-4 md:pl-8 -mb-[3vw]"
+          style={{
+            fontSize: "clamp(80px, 22vw, 320px)",
+            color: "rgba(247,247,245,0.07)",
+          }}
+        >
+          ZEVO<span style={{ color: "rgba(255,140,105,0.18)" }}>/</span>WORKS
+        </div>
+
+        {/* Tagline cut into the wordmark */}
+        <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-right">
+          <div className="mono-label text-paper/40">/ tagline</div>
+          <div className="font-[Space_Grotesk] text-paper/85 text-base md:text-xl max-w-[280px] mt-2">
+            zero effort.<br />
+            <span className="text-mint">maximum output.</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ───── BOTTOM RAIL ───── */}
+      <div className="border-t border-paper/15 px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 mono-label text-paper/50">
+        <span className="inline-flex items-center gap-2">
+          <span className="w-1.5 h-1.5 bg-paper/60" />
+          {year} ZEVO_WORKS · <a href="https://www.gangadharaks.in/" className="hover:text-paper" target="_blank" rel="noopener noreferrer">BY GANGADHAR K.S.</a>
+        </span>
+        <div className="flex items-center gap-3">
+          <span>Built in Bengaluru, IN</span>
+          <span>·</span>
+          <a
+            href="mailto:info@zevo-works.in"
+            className="hover:text-paper"
+          >
+            info@zevo-works.in
+          </a>
+          <span>·</span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-mint animate-[blink_1.6s_steps(2)_infinite]" />
+            live
+          </span>
+        </div>
+      </div>
+
+      {/* ───── TEAR-LINE end ───── */}
+      <div className="border-t-2 border-dashed border-paper/20 px-4 md:px-8 py-2 flex items-center justify-between mono-label !text-[9px] text-paper/35">
+        <span>━━ end of document ━━</span>
+        <span>SEAL · ZW—1.0</span>
+        <span>P.09 / P.09</span>
       </div>
     </footer>
   );

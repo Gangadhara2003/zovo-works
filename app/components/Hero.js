@@ -1,86 +1,149 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
-
 export default function Hero() {
   const APP_URL = "https://my-resume.in";
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-grid overflow-hidden pt-20"
-    >
-      {/* Decorative floating shapes */}
-      <div className="absolute top-32 left-[10%] w-20 h-20 bg-yellow/20 rounded-full blur-2xl animate-[float_6s_ease-in-out_infinite]" />
-      <div className="absolute bottom-40 right-[15%] w-32 h-32 bg-yellow/10 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_2s]" />
-      <div className="absolute top-1/2 left-[5%] w-2 h-2 bg-yellow rounded-full animate-[pulse-soft_3s_ease-in-out_infinite]" />
-      <div className="absolute top-1/3 right-[8%] w-3 h-3 bg-charcoal/20 rounded-full animate-[pulse-soft_4s_ease-in-out_infinite_1s]" />
-
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-charcoal/10 rounded-full bg-white/60 backdrop-blur-sm">
-          <span className="w-2 h-2 bg-yellow rounded-full animate-[pulse-soft_2s_ease-in-out_infinite]" />
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-charcoal/60">
-            Building the future of productivity
+    <section id="hero" className="relative pt-14 border-b hairline bg-paper">
+      {/* Coordinate strip — single line, sparse */}
+      <div className="border-b hairline">
+        <div className="flex items-center justify-between px-4 md:px-8 py-2 mono-label text-grid/55">
+          <span className="inline-flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-forest" />
+            SYS · ZW—01 / HERO
           </span>
+          <span className="hidden md:inline">12.97°N · 77.59°E · BENGALURU</span>
+          <span>BUILD 2026.05.15</span>
         </div>
-
-        {/* Headline */}
-        <h1 className="font-[Anton] text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase leading-[0.9] tracking-tight text-charcoal mb-6">
-          Zero Effort
-          <br />
-          <span className="relative inline-block">
-            Maximum
-            <svg
-              className="absolute -bottom-1 left-0 w-full"
-              viewBox="0 0 400 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M2 8C50 3 150 2 200 5C250 8 350 4 398 7"
-                stroke="#ffe17c"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>{" "}
-          <span className="text-highlight">Output</span>
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-charcoal/60 max-w-xl mx-auto mb-10 leading-relaxed">
-          AI-powered tools that handle the grunt work so you can focus on what
-          actually matters. Build faster. Ship smarter.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto font-[Anton] bg-yellow text-charcoal text-xl uppercase px-10 py-4 rounded-xl hover:bg-yellow/90 hover:shadow-lg hover:shadow-yellow/20 transition-all duration-300 active:scale-95 inline-flex items-center justify-center gap-2"
-          >
-            Try my-resume Free
-            <ArrowUpRight size={20} />
-          </a>
-          <a
-            href="#products"
-            className="w-full sm:w-auto font-[Anton] bg-transparent text-charcoal text-lg uppercase px-8 py-4 rounded-xl border-2 border-charcoal/20 hover:border-charcoal/40 transition-all duration-300 active:scale-95 text-center"
-          >
-            Learn More
-          </a>
-        </div>
-
-        <p className="mt-5 text-sm text-charcoal/40">
-          100% Free · No credit card required
-        </p>
       </div>
 
-      {/* Bottom fade to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        {/* ───────── LEFT ───────── */}
+        <div className="lg:col-span-7 px-4 md:px-10 lg:px-14 py-16 md:py-24 lg:py-28 lg:border-r hairline">
+          {/* Status badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 border border-forest/30 mb-10">
+            <span className="w-2 h-2 bg-forest" />
+            <span className="mono-label text-forest">v1.0 · OPERATIONAL · IN</span>
+          </div>
+
+          {/* Headline — single block, clean */}
+          <h1 className="h-display text-[56px] sm:text-[80px] lg:text-[104px] text-forest">
+            Zero effort.
+          </h1>
+          <div className="mt-2 flex items-baseline flex-wrap gap-x-5 gap-y-2">
+            <span className="h-display text-[56px] sm:text-[80px] lg:text-[104px] text-forest">
+              Maximum
+            </span>
+            <span className="h-display text-[56px] sm:text-[80px] lg:text-[104px] text-paper bg-forest px-4 leading-[1.05]">
+              output.
+            </span>
+          </div>
+
+          {/* Subtext with vertical rule */}
+          <div className="mt-12 flex gap-5 max-w-xl">
+            <div className="w-px bg-forest/45 shrink-0" />
+            <p className="font-[JetBrains_Mono] text-[12px] leading-[1.75] tracking-[0.04em] uppercase text-grid">
+              We build AI tools that automate tedious knowledge work.
+              One is live today — my-resume, an ATS-optimised builder.
+              More are on the way. Free, always.
+            </p>
+          </div>
+
+          {/* CTAs */}
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 max-w-lg">
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mono-label flex items-center justify-between gap-3 px-5 py-3.5 bg-forest text-paper btn-snap hover:bg-forest-deep flex-1"
+            >
+              <span>RUN /my-resume</span>
+              <span aria-hidden>→</span>
+            </a>
+            <a
+              href="#products"
+              className="mono-label flex items-center justify-between gap-3 px-5 py-3.5 border border-forest/40 text-forest btn-snap hover:bg-forest/5 flex-1"
+            >
+              <span>READ /spec</span>
+              <span aria-hidden>↓</span>
+            </a>
+          </div>
+
+          {/* Footnote table */}
+          <div className="mt-14 inline-grid grid-cols-3 border hairline-strong">
+            {[
+              ["FREE", "always"],
+              ["NO_CC", "required"],
+              ["P95", "< 2.1s"],
+            ].map(([k, v]) => (
+              <div key={k} className="px-5 py-3 border-r hairline last:border-r-0">
+                <div className="mono-label text-grid/50">{k}</div>
+                <div className="mono-label !text-[11px] text-forest mt-1">{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ───────── RIGHT — wireframe ───────── */}
+        <div className="lg:col-span-5 relative bg-mosaic-faint min-h-[520px] flex items-center justify-center px-6 py-16">
+          {/* Corner figure label */}
+          <div className="absolute top-4 left-4 mono-label text-grid/50">FIG_01 / ORBIT</div>
+          <div className="absolute top-4 right-4 mono-label text-grid/50">R=140px</div>
+          <div className="absolute bottom-4 left-4 mono-label text-grid/50">RESUME.PDF</div>
+          <div className="absolute bottom-4 right-4 mono-label text-grid/50 inline-flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-forest animate-[blink_1.4s_steps(2)_infinite]" />
+            LIVE
+          </div>
+
+          {/* Diagram box */}
+          <div className="relative w-full max-w-[400px] aspect-square border hairline-strong corner-markers bg-paper">
+            <span className="cm-tr" />
+            <span className="cm-br" />
+
+            {/* Concentric dashed orbits */}
+            <div className="absolute inset-8 dashed-ring animate-[orbit_38s_linear_infinite]" />
+            <div className="absolute inset-20 dashed-ring animate-[orbit-rev_28s_linear_infinite]" />
+
+            {/* Crosshair guides */}
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-grid/15" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-grid/15" />
+
+            {/* Center: resume preview (luminosity → full color on hover) */}
+            <div className="group absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[124px] h-[160px] border hairline-strong bg-paper">
+              <div className="absolute -top-2.5 left-2 bg-paper px-1.5 mono-label !text-[9px] text-forest">RESUME</div>
+              <div className="h-full w-full p-2.5 bg-forest/[0.04] lumi flex flex-col gap-1">
+                <div className="h-1.5 bg-forest w-3/5" />
+                <div className="h-1 bg-forest/50 w-2/5" />
+                <div className="h-px bg-grid/25 my-1.5" />
+                <div className="h-0.5 bg-grid/60 w-full" />
+                <div className="h-0.5 bg-grid/60 w-5/6" />
+                <div className="h-0.5 bg-grid/60 w-full" />
+                <div className="h-0.5 bg-grid/60 w-3/5" />
+                <div className="h-px bg-grid/25 my-1.5" />
+                <div className="h-0.5 bg-coral w-1/3 mb-0.5" />
+                <div className="h-0.5 bg-grid/60 w-full" />
+                <div className="h-0.5 bg-grid/60 w-4/5" />
+                <div className="h-0.5 bg-grid/60 w-full" />
+                <div className="h-0.5 bg-grid/60 w-3/4" />
+              </div>
+            </div>
+
+            {/* Orbiting nodes */}
+            <div className="absolute inset-8 animate-[orbit_18s_linear_infinite]">
+              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-coral" />
+            </div>
+            <div className="absolute inset-8 animate-[orbit-rev_24s_linear_infinite]">
+              <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-2.5 h-2.5 bg-forest" />
+            </div>
+            <div className="absolute inset-20 animate-[orbit_22s_linear_infinite]">
+              <div className="absolute -bottom-1 left-1/4 w-2 h-2 bg-gold" />
+            </div>
+            <div className="absolute inset-20 animate-[orbit-rev_30s_linear_infinite]">
+              <div className="absolute top-1/3 -left-1 w-2 h-2 bg-mint" />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
