@@ -4,15 +4,18 @@ import { useEffect, useState } from "react";
 
 const APP_URL = "https://my-resume.in";
 
+// Internal anchors are prefixed with "/" so they work from sub-pages
+// (e.g. /privacy, /terms) — a bare "#faq" on /privacy just looks for an
+// element on the current page and fails silently.
 const NAV = {
   Products: [
     { label: "my-resume", href: APP_URL, idx: "01", live: true },
-    { label: "More coming", href: "#products", idx: "02", soon: true },
+    { label: "More coming", href: "/#products", idx: "02", soon: true },
   ],
   Company: [
-    { label: "About", href: "#features", idx: "01" },
-    { label: "Process", href: "#how-it-works", idx: "02" },
-    { label: "FAQ", href: "#faq", idx: "03" },
+    { label: "About", href: "/#features", idx: "01" },
+    { label: "Process", href: "/#how-it-works", idx: "02" },
+    { label: "FAQ", href: "/#faq", idx: "03" },
     { label: "Contact", href: "mailto:info@zevo-works.in", idx: "04" },
   ],
   Legal: [
@@ -56,7 +59,7 @@ export default function Footer() {
       <div className="border-b border-paper/15 px-4 md:px-8 py-2 flex justify-between mono-label text-paper/55">
         <span>09 / EOF</span>
         <span className="hidden md:inline">END_OF_DOCUMENT · scroll ↑ to top</span>
-        <a href="#hero" className="hover:text-paper">
+        <a href="/#hero" className="hover:text-paper">
           ↑ RETURN
         </a>
       </div>
