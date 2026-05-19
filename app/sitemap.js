@@ -27,5 +27,29 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${SITE_URL}/learn`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/learn/ai-resume-builder-india`,
+      lastModified: "2026-05-19",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/learn/tailor-resume-to-job-description`,
+      lastModified: "2026-05-19",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/learn/ats-friendly-resume-tips`,
+      lastModified: "2026-05-19",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

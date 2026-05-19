@@ -12,7 +12,8 @@ const NAV_ITEMS = [
   { href: "#features", label: "System", idx: "02" },
   { href: "#how-it-works", label: "Process", idx: "03" },
   { href: "#faq", label: "Docs", idx: "04" },
-  { href: "/contact", label: "Contact", idx: "05" },
+  { href: "/learn", label: "Learn", idx: "05" },
+  { href: "/contact", label: "Contact", idx: "06" },
 ];
 
 const TRACK_TWEEN = { type: "tween", duration: 0.22, ease: [0.32, 0.72, 0, 1] };
