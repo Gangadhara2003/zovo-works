@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: "#features", label: "System", idx: "02" },
   { href: "#how-it-works", label: "Process", idx: "03" },
   { href: "#faq", label: "Docs", idx: "04" },
+  { href: "/contact", label: "Contact", idx: "05" },
 ];
 
 const TRACK_TWEEN = { type: "tween", duration: 0.22, ease: [0.32, 0.72, 0, 1] };
@@ -43,8 +44,15 @@ export default function Navbar() {
   }, [isHome]);
 
   const handleClick = (e, href) => {
+    // Absolute paths (e.g. /contact, /privacy) route to a real page in both
+    // home and sub-page contexts. Only `#anchor` hrefs use smooth-scroll.
+    if (href.startsWith("/")) {
+      e.preventDefault();
+      router.push(href);
+      setIsMenuOpen(false);
+      return;
+    }
     if (!isHome) {
-      // Navigate to home page with the hash
       e.preventDefault();
       router.push(`/${href}`);
       setIsMenuOpen(false);

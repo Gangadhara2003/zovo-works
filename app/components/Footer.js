@@ -16,7 +16,7 @@ const NAV = {
     { label: "About", href: "/#features", idx: "01" },
     { label: "Process", href: "/#how-it-works", idx: "02" },
     { label: "FAQ", href: "/#faq", idx: "03" },
-    { label: "Contact", href: "mailto:info@zevo-works.in", idx: "04" },
+    { label: "Contact", href: "/contact", idx: "04" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "/privacy", idx: "01" },
