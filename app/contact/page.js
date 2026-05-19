@@ -1,3 +1,5 @@
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 
 export const metadata = {
@@ -9,8 +11,12 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="flex-1">
-      <ContactForm />
-    </main>
+    <>
+      <Navbar />
+      <main className="flex-1 pt-14">
+        <ContactForm />
+      </main>
+      <Footer />
+    </>
   );
 }
