@@ -210,3 +210,89 @@ body {
   border: 1px dashed rgba(26, 60, 43, 0.45);
   border-radius: 9999px;
 }
+
+/* ============================================================
+   PROSE-ZW — article body typography for /learn posts
+   ============================================================ */
+.prose-zw h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--color-forest);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(58, 58, 56, 0.20);
+}
+.prose-zw h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-forest);
+}
+.prose-zw p { color: var(--color-grid); }
+.prose-zw strong { color: var(--color-forest); font-weight: 600; }
+.prose-zw a {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 60, 43, 0.5);
+  text-underline-offset: 4px;
+  transition: background-color 0.12s linear;
+}
+.prose-zw a:hover { background: rgba(158, 255, 191, 0.35); }
+.prose-zw ul, .prose-zw ol {
+  border: 1px solid rgba(58, 58, 56, 0.20);
+  padding: 0;
+  list-style: none;
+}
+.prose-zw li {
+  padding: 0.75rem 1rem 0.75rem 2.25rem;
+  border-bottom: 1px solid rgba(58, 58, 56, 0.20);
+  position: relative;
+  font-size: 0.97em;
+  line-height: 1.65;
+}
+.prose-zw li:last-child { border-bottom: none; }
+.prose-zw ul > li::before {
+  content: "▸";
+  position: absolute;
+  left: 0.9rem;
+  top: 0.7rem;
+  color: var(--color-forest);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+.prose-zw ol { counter-reset: zw-li; }
+.prose-zw ol > li {
+  counter-increment: zw-li;
+}
+.prose-zw ol > li::before {
+  content: counter(zw-li, decimal-leading-zero);
+  position: absolute;
+  left: 0.7rem;
+  top: 0.75rem;
+  color: var(--color-forest);
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  letter-spacing: 0.08em;
+}
+.prose-zw blockquote {
+  border-left: 1px solid rgba(26, 60, 43, 0.45);
+  padding-left: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-grid);
+}
+.prose-zw code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(158, 255, 191, 0.35);
+  border: 1px solid rgba(58, 58, 56, 0.20);
+  padding: 1px 6px;
+  color: var(--color-forest);
+}

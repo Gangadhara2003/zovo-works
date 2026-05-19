@@ -122,9 +122,8 @@ export function LegalLayout({
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className={`group block px-6 md:px-8 py-3 border-b hairline btn-snap ${
-                          isActive ? "bg-paper" : "bg-paper hover:bg-mint/10"
-                        }`}
+                        className={`group block px-6 md:px-8 py-3 border-b hairline btn-snap ${isActive ? "bg-paper" : "bg-paper hover:bg-mint/10"
+                          }`}
                       >
                         <div className="flex items-baseline gap-3">
                           <span className={`mono-label shrink-0 ${isActive ? "text-forest" : "text-grid/55"}`}>
@@ -132,17 +131,15 @@ export function LegalLayout({
                           </span>
                           <span className="flex-1 min-w-0 flex items-baseline overflow-hidden">
                             <span
-                              className={`font-[Space_Grotesk] text-[13.5px] font-medium truncate ${
-                                isActive ? "text-forest" : "text-grid"
-                              }`}
+                              className={`font-[Space_Grotesk] text-[13.5px] font-medium truncate ${isActive ? "text-forest" : "text-grid"
+                                }`}
                             >
                               {s.label}
                             </span>
                             <span className="flex-1 mx-2 border-b border-dotted hairline-strong opacity-50 translate-y-[-3px]" />
                             <span
-                              className={`mono-label shrink-0 ${
-                                isActive ? "text-forest" : "text-grid/55"
-                              }`}
+                              className={`mono-label shrink-0 ${isActive ? "text-forest" : "text-grid/55"
+                                }`}
                             >
                               P.{s.n}
                             </span>
@@ -189,8 +186,8 @@ export function LegalLayout({
         {/* Signature stamp */}
         <div className="grid grid-cols-2 md:grid-cols-6 border-t hairline">
           {[
-            ["DRAWN_BY", "G.K.S."],
-            ["CHECKED", "G.K.S."],
+            ["DRAWN_BY", "Ganagdhara K.S"],
+            ["CHECKED", "Ganagdhara K.S"],
             ["DATE", updated],
             ["SCALE", "1 : 1"],
             ["REVISION", "v1.0"],
