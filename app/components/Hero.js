@@ -26,8 +26,11 @@ export default function Hero() {
             <span className="mono-label text-forest">v1.0 · OPERATIONAL · IN</span>
           </div>
 
-          {/* Headline — single block, clean */}
+          {/* Headline — single block, clean. The brand is prefixed for
+              search engines + screen readers via sr-only so the h1 reads
+              "Zevo Works — Zero effort." without altering the visual design. */}
           <h1 className="h-display text-[56px] sm:text-[80px] lg:text-[104px] text-forest">
+            <span className="sr-only">Zevo Works — </span>
             Zero effort.
           </h1>
           <div className="mt-2 flex items-baseline flex-wrap gap-x-5 gap-y-2">

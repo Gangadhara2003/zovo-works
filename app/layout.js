@@ -18,12 +18,20 @@ export const metadata = {
   keywords: [
     "Zevo Works",
     "my-resume",
+    "my resume",
+    "resume",
+    "Resume",
     "AI resume builder India",
+    "AI resume builder",
     "ATS resume builder India",
+    "ATS resume builder",
+    "AI resume builder",
+    "ATS resume builder",
     "tailor resume to job description",
     "JD resume builder",
     "free AI resume optimiser",
     "ATS-friendly resume India",
+    "ATS-friendly resume",
     "LaTeX resume generator",
     "AI resume optimisation",
     "job-specific resume builder",
@@ -41,6 +49,11 @@ export const metadata = {
     "resume builder for doctors India",
     "resume builder for engineers India",
     "resume builder for experienced India",
+    "resume maker for freshers",
+    "resume maker for experienced",
+    "resume builder for doctors",
+    "resume builder for engineers",
+    "resume builder for experienced",
     "resume builder for experienced"
   ],
   referrer: "strict-origin-when-cross-origin",
@@ -108,7 +121,12 @@ const JSON_LD = {
       name: "Zevo Works",
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/zevo-works%20logo.png` },
-      sameAs: [],
+      // Entity signals for brand-query ranking / knowledge graph. Add more as
+      // they go live (GitHub org, X/Twitter, Instagram, YouTube) — each
+      // verified profile strengthens Google's "this is the same entity" link.
+      sameAs: [
+        "https://www.linkedin.com/in/gangadhara-k-s-563142286/",
+      ],
     },
     {
       "@type": "WebSite",
