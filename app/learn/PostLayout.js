@@ -15,12 +15,82 @@ const RELATED = {
     { slug: "ai-resume-builder-india", title: "Best free AI résumé builder for India (honest 2026)" },
     { slug: "tailor-resume-to-job-description", title: "How to tailor your résumé to a JD (with AI, in 5 min)" },
   ],
+  "find-keywords-in-job-description": [
+    { slug: "tailor-resume-to-job-description", title: "How to tailor your résumé to a JD (with AI, in 5 min)" },
+    { slug: "ats-friendly-resume-tips", title: "ATS-friendly résumé in 2026 — what really beats the filter" },
+  ],
+  "what-is-an-ats": [
+    { slug: "ats-friendly-resume-tips", title: "ATS-friendly résumé in 2026 — what really beats the filter" },
+    { slug: "find-keywords-in-job-description", title: "How to find the right keywords in a job description" },
+  ],
+  "how-long-should-a-resume-be": [
+    { slug: "resume-bullet-points-with-metrics", title: "How to write resume bullet points that actually land" },
+    { slug: "ats-friendly-resume-tips", title: "ATS-friendly résumé in 2026 — what really beats the filter" },
+  ],
+  "resume-bullet-points-with-metrics": [
+    { slug: "how-long-should-a-resume-be", title: "How long should a resume be? (The honest answer)" },
+    { slug: "tailor-resume-to-job-description", title: "How to tailor your résumé to a JD (with AI, in 5 min)" },
+  ],
+  "resume-for-freshers-india": [
+    { slug: "resume-bullet-points-with-metrics", title: "How to write resume bullet points that actually land" },
+    { slug: "ats-friendly-resume-tips", title: "ATS-friendly résumé in 2026 — what really beats the filter" },
+  ],
+  "ats-resume-mistakes": [
+    { slug: "how-to-check-if-resume-is-ats-friendly", title: "How to check if your resume is ATS-friendly" },
+    { slug: "what-is-an-ats", title: "What is an ATS, and how does it read your resume?" },
+  ],
+  "pdf-vs-docx-for-ats": [
+    { slug: "ats-friendly-resume-tips", title: "ATS-friendly résumé in 2026 — what really beats the filter" },
+    { slug: "how-to-check-if-resume-is-ats-friendly", title: "How to check if your resume is ATS-friendly" },
+  ],
+  "how-to-check-if-resume-is-ats-friendly": [
+    { slug: "ats-resume-mistakes", title: "Common ATS resume mistakes that sink your application" },
+    { slug: "what-is-an-ats", title: "What is an ATS, and how does it read your resume?" },
+  ],
+  "resume-keyword-optimisation-without-stuffing": [
+    { slug: "find-keywords-in-job-description", title: "How to find the right keywords in a job description" },
+    { slug: "tailor-resume-to-job-description", title: "How to tailor your résumé to a JD (with AI, in 5 min)" },
+  ],
+  "cover-letter-vs-resume-tailoring": [
+    { slug: "tailor-resume-to-job-description", title: "How to tailor your résumé to a JD (with AI, in 5 min)" },
+    { slug: "find-keywords-in-job-description", title: "How to find the right keywords in a job description" },
+  ],
+  "resume-summary-vs-objective": [
+    { slug: "resume-bullet-points-with-metrics", title: "How to write resume bullet points that actually land" },
+    { slug: "action-verbs-for-resumes", title: "Action verbs for resumes (and the weak words to drop)" },
+  ],
+  "action-verbs-for-resumes": [
+    { slug: "resume-bullet-points-with-metrics", title: "How to write resume bullet points that actually land" },
+    { slug: "resume-summary-vs-objective", title: "Resume summary vs objective — which should you use?" },
+  ],
+  "best-job-portals-in-india": [
+    { slug: "resume-format-for-indian-job-market", title: "Resume format for the Indian job market" },
+    { slug: "tailor-resume-to-job-description", title: "How to tailor your résumé to a JD (with AI, in 5 min)" },
+  ],
+  "resume-format-for-indian-job-market": [
+    { slug: "resume-for-freshers-india", title: "Resume for freshers in India (with no experience)" },
+    { slug: "best-job-portals-in-india", title: "Best job portals in India (and how to use them well)" },
+  ],
 };
 
 const SLUG_META = {
   "ai-resume-builder-india": { call: "LIB.01 · AI", accent: "coral", chip: "FIELD GUIDE" },
   "tailor-resume-to-job-description": { call: "LIB.02 · JD", accent: "mint", chip: "HOW-TO" },
   "ats-friendly-resume-tips": { call: "LIB.03 · ATS", accent: "gold", chip: "FIELD GUIDE" },
+  "find-keywords-in-job-description": { call: "LIB.04 · JD", accent: "mint", chip: "HOW-TO" },
+  "what-is-an-ats": { call: "LIB.05 · ATS", accent: "gold", chip: "FIELD GUIDE" },
+  "how-long-should-a-resume-be": { call: "LIB.06 · FMT", accent: "coral", chip: "FIELD GUIDE" },
+  "resume-bullet-points-with-metrics": { call: "LIB.07 · FMT", accent: "mint", chip: "HOW-TO" },
+  "resume-for-freshers-india": { call: "LIB.08 · IN", accent: "coral", chip: "HOW-TO" },
+  "ats-resume-mistakes": { call: "LIB.09 · ATS", accent: "gold", chip: "FIELD GUIDE" },
+  "pdf-vs-docx-for-ats": { call: "LIB.10 · ATS", accent: "gold", chip: "FIELD GUIDE" },
+  "how-to-check-if-resume-is-ats-friendly": { call: "LIB.11 · ATS", accent: "gold", chip: "HOW-TO" },
+  "resume-keyword-optimisation-without-stuffing": { call: "LIB.12 · JD", accent: "mint", chip: "HOW-TO" },
+  "cover-letter-vs-resume-tailoring": { call: "LIB.13 · JD", accent: "mint", chip: "FIELD GUIDE" },
+  "resume-summary-vs-objective": { call: "LIB.14 · FMT", accent: "coral", chip: "FIELD GUIDE" },
+  "action-verbs-for-resumes": { call: "LIB.15 · FMT", accent: "coral", chip: "HOW-TO" },
+  "best-job-portals-in-india": { call: "LIB.16 · IN", accent: "mint", chip: "FIELD GUIDE" },
+  "resume-format-for-indian-job-market": { call: "LIB.17 · IN", accent: "coral", chip: "FIELD GUIDE" },
 };
 
 const ACCENT_BAR = {
@@ -199,7 +269,7 @@ export default function PostLayout({
                 </h3>
                 <p className="mt-3 text-[14px] text-grid leading-relaxed max-w-md">
                   No credit card. Paste any JD, let the pipeline restructure
-                  your résumé. Free forever.
+                  your résumé. Free today.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a

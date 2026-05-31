@@ -65,6 +65,188 @@ export const POSTS = [
     readingTime: "6 min",
     words: "≈ 1,510",
   },
+  {
+    slug: "find-keywords-in-job-description",
+    callNo: "LIB.04 · JD",
+    accent: "mint",
+    chip: "HOW-TO",
+    title: "How to find the right keywords in a job description",
+    excerpt:
+      "The ATS scores you on the keywords in the JD — but which ones? A repeatable method to pull the real must-haves from any listing, without keyword-stuffing.",
+    published: "2026.05.28",
+    keywords: ["job-description-keywords", "resume-keyword-optimisation", "ATS-keywords"],
+    readingTime: "7 min",
+    words: "≈ 1,700",
+  },
+  {
+    slug: "what-is-an-ats",
+    callNo: "LIB.05 · ATS",
+    accent: "gold",
+    chip: "FIELD GUIDE",
+    title: "What is an ATS, and how does it read your resume?",
+    excerpt:
+      "The software that decides whether a human ever sees your resume. What an ATS is, how it parses and scores you, and what that means for how you write.",
+    published: "2026.05.28",
+    keywords: ["what-is-an-ATS", "applicant-tracking-system", "ATS-parsing"],
+    readingTime: "6 min",
+    words: "≈ 1,500",
+  },
+  {
+    slug: "how-long-should-a-resume-be",
+    callNo: "LIB.06 · FMT",
+    accent: "coral",
+    chip: "FIELD GUIDE",
+    title: "How long should a resume be? (The honest answer)",
+    excerpt:
+      "One page or two? The real answer depends on your experience — not a rule someone repeated online. How to decide, and how to trim without losing impact.",
+    published: "2026.05.28",
+    keywords: ["how-long-should-a-resume-be", "one-page-resume", "resume-length"],
+    readingTime: "5 min",
+    words: "≈ 1,300",
+  },
+  {
+    slug: "resume-bullet-points-with-metrics",
+    callNo: "LIB.07 · FMT",
+    accent: "mint",
+    chip: "HOW-TO",
+    title: "How to write resume bullet points that actually land",
+    excerpt:
+      "Duties get ignored; results get interviews. A simple action–impact–number formula for resume bullets, with before/after examples.",
+    published: "2026.05.28",
+    keywords: ["resume-bullet-points", "quantify-achievements", "XYZ-formula"],
+    readingTime: "6 min",
+    words: "≈ 1,600",
+  },
+  {
+    slug: "resume-for-freshers-india",
+    callNo: "LIB.08 · IN",
+    accent: "coral",
+    chip: "HOW-TO",
+    title: "Resume for freshers in India (with no experience)",
+    excerpt:
+      "No work experience yet? Win on projects, internships, and skills — and still pass the ATS. Exactly what to put on a fresher resume, in what order.",
+    published: "2026.05.28",
+    keywords: ["resume-for-freshers", "fresher-resume-India", "no-experience-resume"],
+    readingTime: "7 min",
+    words: "≈ 1,750",
+  },
+  {
+    slug: "ats-resume-mistakes",
+    callNo: "LIB.09 · ATS",
+    accent: "gold",
+    chip: "FIELD GUIDE",
+    title: "Common ATS resume mistakes that sink your application",
+    excerpt:
+      "Most resumes that get no reply weren't unqualified — they were unreadable to the ATS. The most common mistakes, and the exact fix for each.",
+    published: "2026.05.28",
+    keywords: ["ATS-resume-mistakes", "why-resume-rejected", "ATS-parsing-errors"],
+    readingTime: "6 min",
+    words: "≈ 1,550",
+  },
+  {
+    slug: "pdf-vs-docx-for-ats",
+    callNo: "LIB.10 · ATS",
+    accent: "gold",
+    chip: "FIELD GUIDE",
+    title: "PDF vs DOCX for ATS — which should you submit?",
+    excerpt:
+      "The 'PDF breaks the ATS' advice is a decade out of date. The real difference between PDF and DOCX, and how to choose without overthinking it.",
+    published: "2026.05.28",
+    keywords: ["PDF-vs-DOCX-ATS", "is-PDF-ATS-friendly", "resume-file-format"],
+    readingTime: "5 min",
+    words: "≈ 1,250",
+  },
+  {
+    slug: "how-to-check-if-resume-is-ats-friendly",
+    callNo: "LIB.11 · ATS",
+    accent: "gold",
+    chip: "HOW-TO",
+    title: "How to check if your resume is ATS-friendly (free, 5 minutes)",
+    excerpt:
+      "You don't need a paid scan. A free five-minute self-check — copy-paste test, heading test, keyword test — anyone can run.",
+    published: "2026.05.28",
+    keywords: ["check-ATS-friendly", "ATS-resume-test", "free-ATS-checker"],
+    readingTime: "5 min",
+    words: "≈ 1,300",
+  },
+  {
+    slug: "resume-keyword-optimisation-without-stuffing",
+    callNo: "LIB.12 · JD",
+    accent: "mint",
+    chip: "HOW-TO",
+    title: "Resume keyword optimisation — without the stuffing",
+    excerpt:
+      "There's a line between optimising for keywords and stuffing. Cross it and you fail with both the ATS and the recruiter. How to add keywords naturally — and honestly.",
+    published: "2026.05.28",
+    keywords: ["resume-keyword-optimisation", "keyword-stuffing", "natural-keywords"],
+    readingTime: "6 min",
+    words: "≈ 1,500",
+  },
+  {
+    slug: "cover-letter-vs-resume-tailoring",
+    callNo: "LIB.13 · JD",
+    accent: "mint",
+    chip: "FIELD GUIDE",
+    title: "Cover letter vs tailoring your resume — where to spend your time",
+    excerpt:
+      "Limited time per application — cover letter or resume tailoring? An honest take on what moves the needle, and when a cover letter actually matters.",
+    published: "2026.05.28",
+    keywords: ["cover-letter-vs-resume", "do-cover-letters-matter", "resume-tailoring"],
+    readingTime: "5 min",
+    words: "≈ 1,300",
+  },
+  {
+    slug: "resume-summary-vs-objective",
+    callNo: "LIB.14 · FMT",
+    accent: "coral",
+    chip: "FIELD GUIDE",
+    title: "Resume summary vs objective — which should you use?",
+    excerpt:
+      "Summary, objective, or neither? The difference, when each works, and how to write one that earns its space at the top of the page.",
+    published: "2026.05.28",
+    keywords: ["resume-summary-vs-objective", "resume-summary", "resume-objective"],
+    readingTime: "5 min",
+    words: "≈ 1,250",
+  },
+  {
+    slug: "action-verbs-for-resumes",
+    callNo: "LIB.15 · FMT",
+    accent: "coral",
+    chip: "HOW-TO",
+    title: "Action verbs for resumes (and the weak words to drop)",
+    excerpt:
+      "The verb you start a bullet with sets its strength. Strong action verbs by category, the weak openers to delete, and how to pick the right one.",
+    published: "2026.05.28",
+    keywords: ["action-verbs-resume", "resume-power-words", "words-to-avoid-resume"],
+    readingTime: "5 min",
+    words: "≈ 1,300",
+  },
+  {
+    slug: "best-job-portals-in-india",
+    callNo: "LIB.16 · IN",
+    accent: "mint",
+    chip: "FIELD GUIDE",
+    title: "Best job portals in India (and how to use them well)",
+    excerpt:
+      "Naukri, LinkedIn, Indeed and more — what each is best for, and how to apply through them without your resume getting lost in the ATS.",
+    published: "2026.05.28",
+    keywords: ["best-job-portals-India", "Naukri-vs-LinkedIn", "job-search-India"],
+    readingTime: "6 min",
+    words: "≈ 1,500",
+  },
+  {
+    slug: "resume-format-for-indian-job-market",
+    callNo: "LIB.17 · IN",
+    accent: "coral",
+    chip: "FIELD GUIDE",
+    title: "Resume format for the Indian job market (2026)",
+    excerpt:
+      "What to include, what to drop, and how to structure a resume for hiring in India — from photos and personal details to length, sections, and the ATS.",
+    published: "2026.05.28",
+    keywords: ["resume-format-India", "Indian-resume-format", "biodata-vs-resume"],
+    readingTime: "6 min",
+    words: "≈ 1,550",
+  },
 ];
 
 const ACCENT_DOT = { coral: "bg-coral", mint: "bg-mint", gold: "bg-gold" };
@@ -168,7 +350,7 @@ export default function LearnIndex() {
 
         {/* ───── Sub-header strip ───── */}
         <div className="border-b hairline px-4 md:px-8 py-3 flex flex-wrap items-center gap-4 bg-mosaic-faint">
-          <span className="mono-label text-forest">§ ON_SHELF · 02 more</span>
+          <span className="mono-label text-forest">§ ON_SHELF · {String(rest.length).padStart(2, "0")} more</span>
           <span className="hidden md:inline-flex items-center gap-2 mono-label text-grid/55">
             <span className="w-1 h-1 bg-grid/55" />
             SORTED · MOST_RECENT
