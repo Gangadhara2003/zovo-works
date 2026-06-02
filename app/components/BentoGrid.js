@@ -1,7 +1,46 @@
 "use client";
 
+import { useState } from "react";
+
+const ROADMAP_API = "https://api.my-resume.in/api/contact";
+
 export default function BentoGrid() {
   const APP_URL = "https://my-resume.in";
+  const [roadmapIdea, setRoadmapIdea] = useState("");
+  const [roadmapState, setRoadmapState] = useState("idle"); // idle | sending | sent | error
+  const [roadmapError, setRoadmapError] = useState("");
+
+  async function submitRoadmapIdea(e) {
+    if (e) e.preventDefault();
+    const msg = roadmapIdea.trim();
+    if (!msg) return;
+    if (roadmapState === "sending" || roadmapState === "sent") return;
+    setRoadmapState("sending");
+    setRoadmapError("");
+    try {
+      const res = await fetch(ROADMAP_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: "Roadmap visitor",
+          email: "noreply@zevo-works.in",
+          subject: "Roadmap suggestion",
+          message: msg,
+          type: "feedback",
+          source: "zevo-works.in /roadmap",
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Couldn't send. Try again or email us.");
+      }
+      setRoadmapState("sent");
+      setRoadmapIdea("");
+    } catch (err) {
+      setRoadmapError(err.message || "Network error. Try again later.");
+      setRoadmapState("error");
+    }
+  }
 
   return (
     <section id="products" className="bg-paper border-b hairline">
@@ -219,23 +258,35 @@ export default function BentoGrid() {
             tedious workflow you'd pay to delete, tell us — we ship monthly.
           </p>
 
-          <form className="mt-8 flex items-stretch border border-paper/35">
+          <form
+            onSubmit={submitRoadmapIdea}
+            className="mt-8 flex items-stretch border border-paper/35"
+          >
             <input
               type="text"
+              value={roadmapIdea}
+              onChange={(e) => { setRoadmapIdea(e.target.value); if (roadmapState !== "idle") setRoadmapState("idle") }}
+              disabled={roadmapState === "sending" || roadmapState === "sent"}
               placeholder="what should we automate next?"
-              className="flex-1 bg-transparent text-paper placeholder:text-paper/40 px-3 py-2.5 mono-label !text-[11px] !tracking-normal focus:outline-none"
+              maxLength={1000}
+              className="flex-1 bg-transparent text-paper placeholder:text-paper/40 px-3 py-2.5 mono-label !text-[11px] !tracking-normal focus:outline-none disabled:opacity-50"
             />
             <button
-              type="button"
-              onClick={() => (window.location.href = "mailto:info@zevo-works.in?subject=Tool%20request")}
-              className="mono-label px-3 py-2.5 bg-paper text-forest hover:bg-mint btn-snap inline-flex items-center gap-1"
+              type="submit"
+              disabled={!roadmapIdea.trim() || roadmapState === "sending" || roadmapState === "sent"}
+              className="mono-label px-3 py-2.5 bg-paper text-forest hover:bg-mint btn-snap inline-flex items-center gap-1 disabled:opacity-50 disabled:hover:bg-paper"
             >
-              SUBMIT →
+              {roadmapState === "sending" ? "SENDING…" : roadmapState === "sent" ? "✓ SENT" : "SUBMIT →"}
             </button>
           </form>
 
           <div className="mt-3 mono-label !text-[10px] text-paper/55">
-            or email · info@zevo-works.in
+            {roadmapState === "sent"
+              ? "thanks — we read every one."
+              : roadmapState === "error"
+              ? <span className="text-gold">{roadmapError}</span>
+              : <>or email · info@zevo-works.in</>
+            }
           </div>
         </div>
 
