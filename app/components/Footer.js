@@ -214,7 +214,18 @@ export default function Footer() {
             className={`p-5 ${i !== 0 ? "border-l border-paper/15" : ""} ${i === 3 ? "md:border-l" : ""}`}
           >
             <div className="mono-label !text-[9px] text-paper/45">{k}</div>
-            <div className="font-[Space_Grotesk] text-[15px] font-semibold text-paper mt-2">{v}</div>
+            <div className="font-[Space_Grotesk] text-[15px] font-semibold text-paper mt-2">
+              {/Gangadhara/.test(v) ? (
+                <a
+                  href="https://www.gangadharaks.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-paper/30 underline-offset-2 hover:decoration-paper transition-colors"
+                >
+                  {v}
+                </a>
+              ) : v}
+            </div>
           </div>
         ))}
       </div>

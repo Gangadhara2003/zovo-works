@@ -154,15 +154,6 @@ export default function Navbar() {
               href={"https://my-resume.in"}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex mono-label items-center gap-2 px-3.5 py-2 border border-forest/40 text-forest hover:bg-forest/5 btn-snap"
-            >
-              <span className="w-1.5 h-1.5 bg-mint border border-forest" />
-              Sign In
-            </a>
-            <a
-              href={"https://my-resume.in"}
-              target="_blank"
-              rel="noopener noreferrer"
               className="group mono-label relative inline-flex items-center gap-2 px-3.5 py-2 bg-forest text-paper btn-snap overflow-hidden"
             >
               <span className="absolute inset-0 bg-forest-deep translate-y-full group-hover:translate-y-0 transition-transform duration-200 ease-out" />
