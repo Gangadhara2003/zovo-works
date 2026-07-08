@@ -5,11 +5,11 @@ const SITE_URL = "https://zevo-works.in";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Zevo Works — Free AI resume builder & JD-tailored ATS resumes (India)",
+    default: "Zevo Works — AI resume builder & JD-tailored ATS resumes (India)",
     template: "%s · Zevo Works",
   },
   description:
-    "Zevo Works builds free AI tools for job seekers in India. Tailor your resume to any job description, beat ATS filters, and ship a recruiter-ready PDF in minutes — powered by AI + LaTeX.",
+    "Zevo Works builds AI tools for job seekers in India — free tier plus affordable plans. Tailor your resume to any job description, beat ATS filters, and ship a recruiter-ready PDF in minutes — powered by AI + LaTeX.",
   applicationName: "Zevo Works",
   authors: [{ name: "Zevo Works" }],
   creator: "Zevo Works",
@@ -150,8 +150,16 @@ const JSON_LD = {
       operatingSystem: "Web",
       url: "https://my-resume.in",
       description:
-        "Free AI resume builder for India. Paste a job description, get an ATS-tailored resume in minutes with LaTeX-quality PDF export.",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+        "AI resume builder for India with a free tier and affordable paid plans. Paste a job description, get an ATS-tailored resume in minutes with LaTeX-quality PDF export.",
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "INR",
+        lowPrice: "0",
+        highPrice: "219",
+        offerCount: "4",
+        description:
+          "Free tier: 24h unlimited AI every 7 days. Paid plans from ₹59 (incl. 18% GST) for continuous access.",
+      },
       publisher: { "@id": `${SITE_URL}#organization` },
       featureList: [
         "AI keyword optimisation against any JD",

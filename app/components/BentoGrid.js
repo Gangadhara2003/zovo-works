@@ -63,7 +63,7 @@ export default function BentoGrid() {
         <div className="lg:col-span-4 p-8 md:p-12 flex flex-col justify-between gap-6">
           <p className="text-[14px] text-grid leading-relaxed">
             Zevo Works ships AI tooling that automates tedious knowledge work.
-            Right now there's one — built carefully, free forever. The next
+            Right now there's one — built carefully, free to start. The next
             ones are being drafted.
           </p>
           <div className="grid grid-cols-2 gap-px bg-grid/20">
@@ -100,7 +100,7 @@ export default function BentoGrid() {
           <h3 className="h-display text-4xl md:text-5xl text-forest">my-resume</h3>
           <p className="mt-3 text-[14px] text-grid leading-relaxed max-w-sm">
             Drop a JD. AI restructures bullets, optimizes keywords, ships an
-            ATS-friendly PDF typeset in LaTeX. Free, forever.
+            ATS-friendly PDF typeset in LaTeX. Free tier, plans from ₹59.
           </p>
 
           {/* Spec table */}
@@ -109,7 +109,7 @@ export default function BentoGrid() {
               ["RUNTIME", "edge · ≈1.8s p95"],
               ["FORMAT", "LaTeX → PDF/A"],
               ["MODEL", "claude · proprietary"],
-              ["PRICE", "₹0 · always"],
+              ["PRICE", "₹0 free · ₹59+"],
             ].map(([k, v]) => (
               <div key={k} className="grid grid-cols-[110px_1fr] border-b hairline last:border-b-0">
                 <dt className="px-3 py-2 mono-label text-grid/55 border-r hairline">{k}</dt>
@@ -254,7 +254,7 @@ export default function BentoGrid() {
           </h3>
           <p className="mt-4 text-[14px] text-paper/75 leading-relaxed max-w-sm">
             One module is live today. The next ones are still on paper —
-            shaped by the same rules: small, fast, free. If you have a
+            shaped by the same rules: small, fast, free to start. If you have a
             tedious workflow you'd pay to delete, tell us — we ship monthly.
           </p>
 

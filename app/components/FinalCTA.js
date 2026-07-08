@@ -125,7 +125,7 @@ export default function FinalCTA() {
                   ["DESTINATION", "/my-resume"],
                   ["DEPARTS", "manual grind"],
                   ["ARRIVES", "1.8s · PDF"],
-                  ["COST", "₹0 · always"],
+                  ["COST", "₹0 · free tier"],
                 ].map(([k, v]) => (
                   <div key={k} className="grid grid-cols-[120px_1fr] border-b hairline last:border-b-0">
                     <dt className="px-3 py-2 mono-label text-grid/55 border-r hairline">{k}</dt>

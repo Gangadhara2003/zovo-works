@@ -256,7 +256,7 @@ export default function Features() {
           <div className="mt-6 grid grid-cols-2 gap-2 max-w-sm">
             {[
               ["one auth", "SSO across modules"],
-              ["one bill", "₹0 — there is no bill"],
+              ["one bill", "₹0 on the free tier"],
               ["one UI", "shared design tokens"],
               ["one API", "/zevo openapi v1"],
             ].map(([k, v]) => (

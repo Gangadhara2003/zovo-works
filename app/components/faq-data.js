@@ -5,7 +5,7 @@ export const FAQS = [
     tag: "ABOUT",
     accent: "coral",
     q: "What is Zevo Works?",
-    a: "Zevo Works is a one-person studio building AI-powered tools that automate tedious knowledge work. Right now there's one shipped tool — my-resume, an ATS-optimised résumé builder. More are being drafted; each one ships small, fast, and free.",
+    a: "Zevo Works is a one-person studio building AI-powered tools that automate tedious knowledge work. Right now there's one shipped tool — my-resume, an ATS-optimised résumé builder. More are being drafted; each one ships small, fast, and free to start.",
     seeAlso: ["Q.02", "Q.04"],
   },
   {
@@ -13,8 +13,8 @@ export const FAQS = [
     page: "P.02",
     tag: "PRICING",
     accent: "mint",
-    q: "Is my-resume really free?",
-    a: "Yes. ₹0 — no credit card, no trial limits, no paywall on the core resume generation. We may add optional paid extras in the future, but generating a tailored résumé will always be free.",
+    q: "Is my-resume free?",
+    a: "There's a genuinely free tier — 24 hours of unlimited AI access every 7 days, no credit card needed. For continuous, uninterrupted access there are paid plans starting at ₹59 (all prices inclusive of 18% GST). Your saved resumes, JDs and history always stay yours, on any tier.",
     seeAlso: ["Q.01"],
   },
   {

@@ -16,7 +16,7 @@ const LEGACY_STACK = [
 const DIFFS = [
   ["ATS_PASS", "31%", "94%", "+203%"],
   ["TABS_OPEN", "10+", "1", "−90%"],
-  ["MONTHLY_INR", "₹2,499", "₹0", "−100%"],
+  ["MONTHLY_INR", "₹2,499", "₹0–219", "free tier"],
   ["MEAN_LATENCY", "—", "1.8s", "p95"],
 ];
 
@@ -229,7 +229,7 @@ export default function ProblemSolution() {
 
             {/* mint footer pill */}
             <div className="mt-6 inline-flex items-center gap-2 px-2 py-1 bg-mint/50 mono-label text-forest">
-              <span className="w-1.5 h-1.5 bg-forest" /> total 12s · free · open
+              <span className="w-1.5 h-1.5 bg-forest" /> total 12s · free tier · open
             </div>
           </div>
         </div>

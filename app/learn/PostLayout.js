@@ -268,8 +268,8 @@ export default function PostLayout({
                   Build a JD-tailored résumé in 5 minutes.
                 </h3>
                 <p className="mt-3 text-[14px] text-grid leading-relaxed max-w-md">
-                  No credit card. Paste any JD, let the pipeline restructure
-                  your résumé. Free today.
+                  Free to start, no credit card. Paste any JD, let the pipeline
+                  restructure your résumé. Paid plans from ₹59 for continuous access.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a

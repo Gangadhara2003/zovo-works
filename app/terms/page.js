@@ -175,10 +175,12 @@ export default function TermsPage() {
 
       <H id="fees" n="08">Fees</H>
       <P>
-        Our products are currently provided free of charge. We reserve the
-        right to introduce paid plans in the future; if we do, we will give
-        you reasonable notice and you may stop using or delete your account
-        at any time.
+        my-resume runs on a freemium model: a free tier (24 hours of unlimited
+        AI access every 7 days) plus optional paid plans for continuous access —
+        currently ₹59 / 7 days, ₹109 / 15 days, and ₹219 / 28 days, all inclusive
+        of 18% GST. Current pricing is shown on the my-resume pricing page; we may
+        revise plans or prices with reasonable notice. Payments are processed by
+        Razorpay (INR only).
       </P>
 
       <H id="availability" n="09">Availability</H>
@@ -252,6 +254,10 @@ export default function TermsPage() {
           info@zevo-works.in
         </a>
         .
+      </P>
+      <P>
+        Zevo Works · GSTIN <strong className="text-forest">29DUUPG0736G1ZA</strong> ·
+        Kempanahalli, Davanagere, Karnataka, India.
       </P>
     </LegalLayout>
   );

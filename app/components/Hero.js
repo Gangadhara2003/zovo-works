@@ -48,7 +48,7 @@ export default function Hero() {
             <p className="font-[JetBrains_Mono] text-[12px] leading-[1.75] tracking-[0.04em] uppercase text-grid">
               We build AI tools that automate tedious knowledge work.
               One is live today — my-resume, an ATS-optimised builder.
-              More are on the way. Free, always.
+              More are on the way. Free tier to start.
             </p>
           </div>
 
@@ -75,8 +75,8 @@ export default function Hero() {
           {/* Footnote table */}
           <div className="mt-14 inline-grid grid-cols-3 border hairline-strong">
             {[
-              ["FREE", "always"],
-              ["NO_CC", "required"],
+              ["FREE", "tier"],
+              ["NO_CC", "to start"],
               ["P95", "< 2.1s"],
             ].map(([k, v]) => (
               <div key={k} className="px-5 py-3 border-r hairline last:border-r-0">

@@ -85,7 +85,7 @@ export default function Footer() {
           </h3>
           <p className="mt-4 text-[14px] text-paper/70 leading-relaxed max-w-md">
             A one-person studio in Bengaluru, IN — building AI tooling that
-            ships small, runs fast, and stays free. One module out today,
+            ships small, runs fast, and starts free. One module out today,
             more on the way.
           </p>
 
@@ -254,9 +254,11 @@ export default function Footer() {
 
       {/* ───── BOTTOM RAIL ───── */}
       <div className="border-t border-paper/15 px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 mono-label text-paper/50">
-        <span className="inline-flex items-center gap-2">
+        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
           <span className="w-1.5 h-1.5 bg-paper/60" />
           {year} ZEVO_WORKS · <a href="https://www.gangadharaks.in/" className="hover:text-paper" target="_blank" rel="noopener noreferrer">BY GANGADHAR K.S.</a>
+          <span className="text-paper/30">·</span>
+          <span className="text-paper/45">GSTIN 29DUUPG0736G1ZA</span>
         </span>
         <div className="flex items-center gap-3">
           <span>Built in Bengaluru, IN</span>
