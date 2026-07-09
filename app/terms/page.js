@@ -30,7 +30,8 @@ const SECTIONS = [
   { id: "liability", n: "12", label: "Liability" },
   { id: "law", n: "13", label: "Governing law" },
   { id: "changes", n: "14", label: "Changes" },
-  { id: "contact", n: "15", label: "Contact" },
+  { id: "grievance", n: "15", label: "Grievance officer" },
+  { id: "contact", n: "16", label: "Contact" },
 ];
 
 export default function TermsPage() {
@@ -41,7 +42,7 @@ export default function TermsPage() {
       title="Terms of"
       highlight="service."
       effective="2026.05.10"
-      updated="2026.05.15"
+      updated="2026.07.09"
       sections={SECTIONS}
       pairLabel="Read Privacy Policy"
       pairHref="/privacy"
@@ -80,7 +81,8 @@ export default function TermsPage() {
       <H id="agreement" n="01">Agreement</H>
       <P>
         These Terms form a binding agreement between you ("User", "you") and
-        Zevo Works. Please also read our{" "}
+        Zevo Works, a GST-registered sole proprietorship (GSTIN 29DUUPG0736G1ZA)
+        based in Kempanahalli, Davanagere, Karnataka, India. Please also read our{" "}
         <Link
           href="/privacy"
           className="text-forest underline underline-offset-4 decoration-forest/60 hover:bg-mint/30"
@@ -179,9 +181,47 @@ export default function TermsPage() {
         AI access every 7 days) plus optional paid plans for continuous access —
         currently ₹59 / 7 days, ₹109 / 15 days, and ₹219 / 28 days, all inclusive
         of 18% GST. Current pricing is shown on the my-resume pricing page; we may
-        revise plans or prices with reasonable notice. Payments are processed by
-        Razorpay (INR only).
+        revise plans or prices with at least{" "}
+        <strong className="text-forest">7 days'</strong> notice before the change
+        takes effect. Payments are processed by Razorpay (INR only); Razorpay may
+        retain transaction records as required by applicable law and its own terms
+        of service, which you accept when making a payment.
       </P>
+      <UL>
+        <Li>
+          <strong className="text-forest">One-time passes — no auto-renewal.</strong>{" "}
+          Each paid plan is a one-time, prepaid pass for a fixed number of days.
+          There is no subscription, no recurring charge, and no payment mandate
+          stored — nothing renews automatically. To continue after a pass ends,
+          you choose to buy another.
+        </Li>
+        <Li>
+          <strong className="text-forest">Cancellation.</strong> Because plans do
+          not auto-renew, there is nothing to cancel mid-cycle. If you stop using
+          the Service or delete your account during a paid period, access runs
+          until the pass expires; unused time is not refunded.
+        </Li>
+        <Li>
+          <strong className="text-forest">Refunds.</strong> Paid plans are
+          non-refundable. As a good-faith exception, if a genuine problem on our
+          side (a bug, downtime, or a provider-side AI failure) disrupts a paid
+          feature, we extend your access by +1 day per incident on request, in
+          place of a refund. The full refund policy is published at{" "}
+          <a
+            href="https://my-resume.in/refund-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-forest underline underline-offset-4 decoration-forest/60 hover:bg-mint/30"
+          >
+            my-resume.in/refund-policy
+          </a>.
+        </Li>
+        <Li>
+          <strong className="text-forest">GST invoice.</strong> As a
+          GST-registered business we issue a GST-compliant tax invoice for every
+          paid transaction, delivered by Razorpay to your registered email.
+        </Li>
+      </UL>
 
       <H id="availability" n="09">Availability</H>
       <P>
@@ -199,6 +239,16 @@ export default function TermsPage() {
         Service, or if we discontinue the Service. On termination, sections
         that by their nature should survive (Your Content licence wind-down,
         IP, disclaimers, liability, governing law) will survive.
+      </P>
+      <P>
+        When you delete your account, we permanently remove your account,
+        profile, résumés and job-description data from primary storage within{" "}
+        <strong className="text-forest">30 days</strong>, and purge encrypted
+        backups within <strong className="text-forest">90 days</strong>, except
+        where we must retain limited records (e.g. GST/tax invoices) to comply
+        with law. See our{" "}
+        <Link href="/privacy" className="text-forest underline underline-offset-4 decoration-forest/60 hover:bg-mint/30">Privacy Policy</Link>{" "}
+        for detail.
       </P>
 
       <H id="disclaimer" n="11">Disclaimer of warranties</H>
@@ -220,9 +270,10 @@ export default function TermsPage() {
           liable for any indirect, incidental, special, consequential, or
           punitive damages, or any loss of profits, revenue, data, or job
           opportunities, arising from your use of the Service. Our aggregate
-          liability for any claim relating to the Service shall not exceed
-          INR 1,000 (or the total fees you paid us in the 12 months before
-          the claim, if greater).
+          liability for any claim relating to the Service shall not exceed the
+          total fees you paid us for the Service in the 12 months preceding the
+          event giving rise to the claim. Nothing in these Terms excludes
+          liability that cannot be excluded under applicable law.
         </span>
       </P>
 
@@ -231,7 +282,8 @@ export default function TermsPage() {
         These Terms are governed by the laws of India. Any dispute arising
         out of or in connection with these Terms or the Service shall be
         subject to the exclusive jurisdiction of the courts located in
-        Bengaluru, Karnataka. If you are a consumer in another jurisdiction,
+        Davanagere, Karnataka (the place of our registered business). If you are
+        a consumer in another jurisdiction,
         mandatory local consumer-protection laws may also apply.
       </P>
 
@@ -244,7 +296,26 @@ export default function TermsPage() {
         of the revised Terms.
       </P>
 
-      <H id="contact" n="15">Contact</H>
+      <H id="grievance" n="15">Grievance officer</H>
+      <P>
+        In line with the IT (Intermediary Guidelines and Digital Media Ethics
+        Code) Rules, 2021 and the DPDP Act, 2023, the grievance officer for the
+        Service is:
+      </P>
+      <UL>
+        <Li><strong className="text-forest">Name:</strong> Gangadhara K S (Proprietor, Zevo Works)</Li>
+        <Li>
+          <strong className="text-forest">Email:</strong>{" "}
+          <a href="mailto:info@zevo-works.in" className="text-forest underline underline-offset-4 decoration-forest/60 hover:bg-mint/30">info@zevo-works.in</a>
+        </Li>
+        <Li><strong className="text-forest">Address:</strong> Kempanahalli, Davanagere, Karnataka, India</Li>
+      </UL>
+      <P>
+        We acknowledge grievances within <strong className="text-forest">24 hours</strong>{" "}
+        and resolve them within <strong className="text-forest">15 days</strong> of receipt.
+      </P>
+
+      <H id="contact" n="16">Contact</H>
       <P>
         Questions about these Terms? Email{" "}
         <a
