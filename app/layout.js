@@ -1,4 +1,5 @@
 import "./globals.css";
+import ClosureNotice from "./components/ClosureNotice";
 
 const SITE_URL = "https://zevo-works.in";
 
@@ -224,6 +225,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full bg-mosaic font-[General_Sans,sans-serif] text-grid">
         <div className="page-frame mx-auto bg-paper flex flex-col min-h-screen">
+          <ClosureNotice />
           {children}
         </div>
       </body>
